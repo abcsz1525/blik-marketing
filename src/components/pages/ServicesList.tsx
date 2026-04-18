@@ -15,7 +15,7 @@ export function ServicesList({ services, locale }: Props) {
   const tPage = useTranslations('servicesPage');
 
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-10 md:py-14">
       <div className="container-site flex flex-col gap-0">
         {services.map((s, idx) => (
           <motion.article

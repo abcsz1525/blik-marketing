@@ -15,7 +15,7 @@ export function Footer() {
   const locale = useLocale();
 
   return (
-    <footer className="relative mt-40 border-t border-[var(--color-line)] bg-[var(--color-background)]">
+    <footer className="relative border-t border-[var(--color-line)] bg-[var(--color-background)]">
       <div className="absolute inset-0 pointer-events-none opacity-60">
         <div className="absolute inset-0 iri-surface opacity-30" />
       </div>

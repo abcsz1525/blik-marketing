@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export function ContactsDetails() {
   const t = useTranslations('contact.directContact');
   return (
-    <section className="py-24 md:py-32 border-t border-[var(--color-line)]">
+    <section className="py-16 md:py-20 border-t border-[var(--color-line)]">
       <div className="container-site grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
         {[
           { label: 'Email', value: t('email'), href: `mailto:${t('email')}` },

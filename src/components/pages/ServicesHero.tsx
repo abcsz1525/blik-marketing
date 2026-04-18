@@ -12,7 +12,7 @@ const IridescentCanvas = dynamic(
 export function ServicesHero() {
   const t = useTranslations('servicesPage');
   return (
-    <section className="relative min-h-[80svh] flex items-end overflow-hidden pt-[160px] pb-20 md:pb-28">
+    <section className="relative min-h-[80svh] flex items-end overflow-hidden pt-[160px] pb-10 md:pb-14">
       <div className="iri-surface absolute inset-0" aria-hidden />
       <IridescentCanvas className="opacity-80" />
       <div
