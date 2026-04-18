@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "siteName": "Blik Marketing",
+    "siteTagline": "Full-cycle marketing agency",
+    "defaultDescription": "Blik Marketing — full-cycle marketing agency. Strategy, positioning, brand design, social, PR and crisis management for premium brands."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Work",
+    "about": "About",
+    "contacts": "Contact",
+    "cta": "Get in touch"
+  },
+  "hero": {
+    "eyebrow": "Full-cycle marketing agency",
+    "title": "The premium light",
+    "titleAccent": "refracted through the details",
+    "subtitle": "Strategy, brand, communications and creative for companies that aim to be genuinely noticed.",
+    "cta": "Get in touch",
+    "ctaSecondary": "See the work",
+    "scrollHint": "Scroll"
+  },
+  "aboutShort": {
+    "eyebrow": "About",
+    "headline": "A premium marketing studio — based in Moscow since 2022, working with clients across the world.",
+    "lead": "We sit at the intersection of strategy, brand and communications. Every project is a point of refraction — the moment a brand becomes seen, wanted and commercial.",
+    "learnMore": "Learn more about the studio"
+  },
+  "services": {
+    "eyebrow": "Practice",
+    "title": "What we do",
+    "subtitle": "Six disciplines that together close a full marketing cycle — from insight to crisis communications.",
+    "viewAll": "All services",
+    "items": {
+      "research": {
+        "name": "Research & Strategy",
+        "short": "Market intelligence and the roadmap for launching or scaling.",
+        "full": "We investigate the market, segments, audience behaviour and competitors. Then we shape a strategy you can defend in front of investors and run day-to-day — with metrics, budgets and a sequence of steps."
+      },
+      "positioning": {
+        "name": "Positioning",
+        "short": "Messaging architecture and guides for every audience segment.",
+        "full": "We build the brand platform: mission, values, attributes, archetype, tone of voice. Messages get crafted for every segment and every touchpoint — from landing page to sales team."
+      },
+      "design": {
+        "name": "Design & Creative",
+        "short": "Brand platform, creative campaigns and identity systems of any scale.",
+        "full": "From logo and identity to packaging, landings and ad campaigns. We design visuals where premium reads on the intuitive level — before the first word is ever read."
+      },
+      "smm": {
+        "name": "Social & ORM",
+        "short": "Social media and online reputation management.",
+        "full": "Content strategy, production, community management and influencer work. Alongside, a systematic ORM practice: mention monitoring, review management, SERM optimisation."
+      },
+      "pr": {
+        "name": "PR & Media",
+        "short": "Running the brand's media field: publications, partnerships, ambassadors.",
+        "full": "We secure federal and industry coverage, PR campaigns for launches and products, work with stars and experts. We measure ourselves by the trust earned, not just the reach reported."
+      },
+      "crisis": {
+        "name": "Crisis Management",
+        "short": "Systemic marketing and reputation under crisis conditions — and the leap afterwards.",
+        "full": "We step in when the fall has to stop and communications must be restarted. Full audit, legal and media assessment, a trust-recovery strategy and an aggressive growth plan for the post-stabilisation phase."
+      }
+    }
+  },
+  "cases": {
+    "eyebrow": "Work",
+    "title": "Selected projects",
+    "subtitle": "A handful of projects. The full list lives in the portfolio.",
+    "viewAll": "All projects",
+    "viewCase": "Open case",
+    "industryLabel": "Industry",
+    "serviceLabel": "Service",
+    "yearLabel": "Year",
+    "taskLabel": "Challenge",
+    "solutionLabel": "Approach",
+    "resultsLabel": "Outcome",
+    "nextCase": "Next project"
+  },
+  "industries": {
+    "eyebrow": "Expertise",
+    "title": "Industries we've worked across",
+    "subtitle": "From premium real estate to pharmaceuticals — we speak the language of every client's market.",
+    "andMore": "and 10+ more industries"
+  },
+  "whyUs": {
+    "eyebrow": "Why us",
+    "title": "An agency accountable for outcomes",
+    "metrics": {
+      "years": "years in practice",
+      "cases": "delivered projects",
+      "industries": "industries served",
+      "team": "specialists in-house"
+    },
+    "points": [
+      {
+        "title": "Strategy before tactics",
+        "body": "No banner ships until there is a clear answer to the insight it's built on."
+      },
+      {
+        "title": "Full cycle, one team",
+        "body": "Research, brand, production and media — one team, one accountability, one entry point."
+      },
+      {
+        "title": "Metrics, not decks",
+        "body": "We optimise cost per follower, reach, awareness and sales — not slide counts."
+      },
+      {
+        "title": "Premium craft",
+        "body": "We work with brands where form speaks as loudly as substance."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Blik is the point where a brand becomes visible",
+    "lead": "A team of 12 specialists in Moscow, building premium brands for the Russian and international market since 2022.",
+    "storyTitle": "Story",
+    "story": [
+      "The agency was founded in 2022 as an independent practice at the intersection of branding and strategy. The first clients came through reputation — with a specific positioning brief.",
+      "Over three years we grew into a full-cycle studio — adding research, creative production, social and PR. Today we work across real estate, fashion and beauty, HoReCa, IT, FMCG, pharma and automotive — in Russia and internationally.",
+      "The way we work is engaged. We don't spread across dozens of parallel briefs — we take on work where we can actually move the needle."
+    ],
+    "philosophyTitle": "Philosophy",
+    "philosophyLead": "The concept of BLIK is about the instant light refracts and becomes an accent.",
+    "philosophy": "Every brand we work with passes through that point of refraction. We don't turn up the volume — we focus it. We find the edge where the product glitters. And we make sure the audience sees that glint.",
+    "teamTitle": "Team",
+    "teamSubtitle": "12 specialists. Each one leading their craft.",
+    "industriesTitle": "Industries we serve",
+    "cta": "Talk about your project"
+  },
+  "team": {
+    "role": {
+      "founder": "Founder, Strategy Director",
+      "managing": "Managing Partner",
+      "creative": "Creative Director",
+      "brand": "Brand Strategist",
+      "design": "Art Director",
+      "copy": "Head of Copy",
+      "smm": "Head of Social & ORM",
+      "pr": "Head of PR & Media",
+      "projects": "Head of Project Management",
+      "research": "Lead Researcher",
+      "motion": "Motion & Video Lead",
+      "client": "Client Service Director"
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Ready to talk about your project?",
+    "subtitle": "Tell us about the challenge — we'll come back within one working day with a short take and next steps.",
+    "form": {
+      "name": "Your name",
+      "namePlaceholder": "How should we call you",
+      "company": "Company",
+      "companyPlaceholder": "Company name",
+      "contact": "Email or phone",
+      "contactPlaceholder": "How to reach you",
+      "message": "Tell us about the task",
+      "messagePlaceholder": "Industry, goals, timing — anything you consider important",
+      "consent": "I agree to the processing of my personal data and a reply from the agency",
+      "submit": "Send enquiry",
+      "submitting": "Sending...",
+      "success": "Thank you. Elena will receive your enquiry and reach out within a working day.",
+      "error": "The message didn't go through. Please write directly — itsdanilina@yandex.ru.",
+      "required": "Required",
+      "invalidContact": "Please enter a valid email or phone",
+      "tooShort": "At least 2 characters"
+    },
+    "directContact": {
+      "label": "Or directly",
+      "email": "itsdanilina@yandex.ru",
+      "phone": "+7 905 772 88 00",
+      "phoneHuman": "+7 (905) 772-88-00",
+      "owner": "Elena Danilina, Managing Partner"
+    },
+    "hours": "Mon–Fri, 10:00–19:00 Moscow"
+  },
+  "portfolioPage": {
+    "eyebrow": "Portfolio",
+    "title": "Projects where we brought the shine through",
+    "subtitle": "Selected cases across industries — strategy, brand, communications and crisis management.",
+    "filters": {
+      "all": "All",
+      "service": "By service",
+      "industry": "By industry"
+    }
+  },
+  "servicesPage": {
+    "eyebrow": "Services",
+    "title": "Six practices. One full cycle.",
+    "subtitle": "Each discipline works on its own and in combination. Take one service or the full cycle — from research to crisis.",
+    "cta": "Discuss the brief"
+  },
+  "footer": {
+    "tagline": "Full-cycle marketing agency",
+    "sections": {
+      "navigate": "Navigate",
+      "services": "Services",
+      "contact": "Contact",
+      "legal": "Legal"
+    },
+    "copyright": "© {year} Blik Marketing. All rights reserved.",
+    "owner": "Elena Danilina",
+    "privacy": "Privacy policy",
+    "agreement": "Public offer",
+    "madeIn": "Moscow"
+  },
+  "common": {
+    "back": "Back",
+    "allCases": "All projects",
+    "readMore": "Read more",
+    "loading": "Loading",
+    "year": "Year",
+    "inProgress": "In progress",
+    "external": "Open"
+  }
+}
