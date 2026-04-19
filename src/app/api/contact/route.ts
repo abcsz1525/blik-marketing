@@ -1,35 +1,23 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
-
-const schema = z.object({
-  name: z.string().min(2).max(100),
-  company: z.string().max(120).optional().default(''),
-  contact: z
-    .string()
-    .min(5)
-    .max(120)
-    .regex(
-      /(^[^\s@]+@[^\s@]+\.[^\s@]+$)|(^[\d+\-\s()]{7,}$)/,
-      'Invalid email or phone',
-    ),
-  message: z.string().max(2000).optional().default(''),
-});
+import { contactSchema } from '@/lib/contact-schema';
 
 export async function POST(req: Request) {
   try {
     const json = await req.json();
-    const data = schema.parse(json);
+    const data = contactSchema.parse(json);
 
     const apiKey = process.env.RESEND_API_KEY;
     const to = process.env.CONTACT_EMAIL ?? 'itsdanilina@yandex.ru';
 
-    const subject = `Заявка с сайта — ${data.name}${data.company ? ` (${data.company})` : ''}`;
+    const subject = `Заявка с сайта — ${data.name} (${data.company})`;
     const text = [
       `Новая заявка с blik-marketing.ru`,
       ``,
       `Имя: ${data.name}`,
-      `Компания: ${data.company || '—'}`,
-      `Контакт: ${data.contact}`,
+      `Компания: ${data.company}`,
+      `Email: ${data.email}`,
+      `Телефон: ${data.phone || '—'}`,
       `Сообщение: ${data.message || '—'}`,
       ``,
       `Отправлено: ${new Date().toISOString()}`,
@@ -45,7 +33,7 @@ export async function POST(req: Request) {
         body: JSON.stringify({
           from: 'Блик Маркетинг <hello@blik-marketing.ru>',
           to: [to],
-          reply_to: data.contact.includes('@') ? data.contact : undefined,
+          reply_to: data.email,
           subject,
           text,
         }),

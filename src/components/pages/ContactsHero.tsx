@@ -39,25 +39,11 @@ export function ContactsHero() {
             {t('subtitle')}
           </p>
 
-          <div className="mt-6 pt-8 border-t border-[var(--color-line)] flex flex-col gap-4">
-            <div className="eyebrow">{tDirect('label')}</div>
-            <a
-              href="mailto:itsdanilina@yandex.ru"
-              className="text-[28px] md:text-[32px] leading-none hover:iri-text transition-all"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
-              {tDirect('email')}
-            </a>
-            <a
-              href="tel:+79057728800"
-              className="text-[17px] text-[var(--color-ink)] hover:opacity-70 transition-opacity"
-            >
-              {tDirect('phoneHuman')}
-            </a>
+          <div className="flex flex-col gap-1 mt-4">
             <div className="text-[13px] text-[var(--color-ink-muted)]">
               {tDirect('owner')}
             </div>
-            <div className="text-[12px] tracking-[0.12em] uppercase text-[var(--color-ink-subtle)] mt-2">
+            <div className="text-[12px] tracking-[0.12em] uppercase text-[var(--color-ink-subtle)]">
               {t('hours')}
             </div>
           </div>
@@ -67,7 +53,7 @@ export function ContactsHero() {
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:col-span-7 bg-white/60 backdrop-blur-sm border border-[var(--color-line)] rounded-[var(--radius-xl)] p-8 md:p-12"
+          className="lg:col-span-7 bg-white/80 backdrop-blur-sm border border-[var(--color-line)] rounded-[var(--radius-xl)] p-8 md:p-12"
         >
           <ContactForm theme="light" />
         </motion.div>

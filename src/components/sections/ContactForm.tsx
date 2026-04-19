@@ -1,22 +1,18 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useForm } from 'react-hook-form';
+import { useForm, type Resolver } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { contactSchema, type ContactInput } from '@/lib/contact-schema';
 
-interface FormValues {
-  name: string;
-  company: string;
-  contact: string;
-  message: string;
+interface FormValues extends ContactInput {
   consent: boolean;
   /** honeypot */
   website: string;
 }
-
-const CONTACT_REGEX = /(^[^\s@]+@[^\s@]+\.[^\s@]+$)|(^[\d+\-\s()]{7,}$)/;
 
 interface Props {
   theme?: 'light' | 'dark';
@@ -34,10 +30,15 @@ export function ContactForm({ theme = 'light' }: Props) {
     reset,
     formState: { errors },
   } = useForm<FormValues>({
+    // zodResolver validates only schema fields (name/company/email/phone/message).
+    // consent + website (honeypot) are validated by RHF register rules.
+    // Cast is safe: FormValues is a superset of ContactInput.
+    resolver: zodResolver(contactSchema) as unknown as Resolver<FormValues>,
     defaultValues: {
       name: '',
       company: '',
-      contact: '',
+      email: '',
+      phone: '',
       message: '',
       consent: false,
       website: '',
@@ -59,7 +60,8 @@ export function ContactForm({ theme = 'light' }: Props) {
         body: JSON.stringify({
           name: data.name,
           company: data.company,
-          contact: data.contact,
+          email: data.email,
+          phone: data.phone,
           message: data.message,
         }),
       });
@@ -85,12 +87,21 @@ export function ContactForm({ theme = 'light' }: Props) {
     isDark ? 'text-white/60' : 'text-[var(--color-ink-muted)]',
   );
 
+  const errorClass = 'text-[12px] text-[#FF7A7A] mt-2 block';
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-7">
-      {/* Honeypot */}
-      <div className="absolute -left-[9999px] opacity-0" aria-hidden>
-        <label>
-          Website
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+      className="relative flex flex-col gap-7"
+    >
+      {/* Honeypot — hidden from screen readers and bots */}
+      <div
+        className="absolute left-[-9999px] top-[-9999px] w-px h-px overflow-hidden"
+        aria-hidden="true"
+      >
+        <label aria-hidden="true">
+          Leave this field empty
           <input
             type="text"
             tabIndex={-1}
@@ -107,39 +118,59 @@ export function ContactForm({ theme = 'light' }: Props) {
             type="text"
             placeholder={t('namePlaceholder')}
             className={inputClass}
-            {...register('name', { required: true, minLength: 2 })}
+            {...register('name')}
           />
           {errors.name && (
-            <span className="text-[12px] text-[#FF7A7A] mt-2 block">{t('required')}</span>
+            <span className={errorClass}>
+              {t(errors.name.message || 'required')}
+            </span>
           )}
         </div>
         <div>
-          <label className={labelClass}>{t('company')}</label>
+          <label className={labelClass}>{t('company')} *</label>
           <input
             type="text"
             placeholder={t('companyPlaceholder')}
             className={inputClass}
             {...register('company')}
           />
+          {errors.company && (
+            <span className={errorClass}>
+              {t(errors.company.message || 'required')}
+            </span>
+          )}
         </div>
       </div>
 
-      <div>
-        <label className={labelClass}>{t('contact')} *</label>
-        <input
-          type="text"
-          placeholder={t('contactPlaceholder')}
-          className={inputClass}
-          {...register('contact', {
-            required: true,
-            pattern: CONTACT_REGEX,
-          })}
-        />
-        {errors.contact && (
-          <span className="text-[12px] text-[#FF7A7A] mt-2 block">
-            {t('invalidContact')}
-          </span>
-        )}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+        <div>
+          <label className={labelClass}>{t('email')} *</label>
+          <input
+            type="email"
+            placeholder={t('emailPlaceholder')}
+            className={inputClass}
+            {...register('email')}
+          />
+          {errors.email && (
+            <span className={errorClass}>
+              {t(errors.email.message || 'required')}
+            </span>
+          )}
+        </div>
+        <div>
+          <label className={labelClass}>{t('phone')}</label>
+          <input
+            type="tel"
+            placeholder={t('phonePlaceholder')}
+            className={inputClass}
+            {...register('phone')}
+          />
+          {errors.phone && (
+            <span className={errorClass}>
+              {t(errors.phone.message || 'invalidPhone')}
+            </span>
+          )}
+        </div>
       </div>
 
       <div>
