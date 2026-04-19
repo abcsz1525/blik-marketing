@@ -189,7 +189,13 @@
       "all": "All",
       "service": "By service",
       "industry": "By industry"
-    }
+    },
+    "empty": {
+      "title": "No public cases in this category yet",
+      "body": "Some work is under NDA. Get in touch — we'll share more on a call.",
+      "cta": "Talk to us"
+    },
+    "count": "{count, plural, one {# project} other {# projects}}"
   },
   "servicesPage": {
     "eyebrow": "Services",

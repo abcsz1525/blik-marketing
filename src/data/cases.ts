@@ -32,7 +32,7 @@ export const CASES: CaseStudy[] = [
       ru: 'Комплексное исследование лидера рынка светотехники',
       en: 'Comprehensive research for a lighting market leader',
     },
-    industryId: 'real-estate',
+    industryId: 'lighting',
     serviceIds: ['research'],
     primaryService: 'research',
     summary: {
@@ -486,7 +486,7 @@ export const CASES: CaseStudy[] = [
       ru: 'Антикризисное управление и системный маркетинг',
       en: 'Crisis management and systemic marketing',
     },
-    industryId: 'real-estate',
+    industryId: 'furniture',
     serviceIds: ['crisis'],
     primaryService: 'crisis',
     summary: {

@@ -56,4 +56,18 @@ export const INDUSTRIES: Industry[] = [
     clients: ['Continental', 'Gislaved', 'Holt'],
     accent: '#CFE8FF',
   },
+  {
+    id: 'lighting',
+    ru: 'Освещение',
+    en: 'Lighting',
+    clients: ['Arlight'],
+    accent: '#FFF0D8',
+  },
+  {
+    id: 'furniture',
+    ru: 'Мебель и интерьер',
+    en: 'Furniture & interiors',
+    clients: ['Столплит'],
+    accent: '#D8C8B0',
+  },
 ];

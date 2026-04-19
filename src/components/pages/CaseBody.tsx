@@ -65,8 +65,8 @@ export function CaseBody({ kase, locale }: Props) {
         >
           <h2 className="display-md">{t('resultsLabel')}</h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--color-line)] border border-[var(--color-line)] rounded-[var(--radius-lg)] overflow-hidden">
-            {kase.metrics.map((m, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--color-line)] border border-[var(--color-line)] rounded-[var(--radius-lg)] overflow-hidden">
+            {kase.metrics.slice(0, 3).map((m, i) => (
               <motion.div
                 key={m.value + i}
                 initial={{ opacity: 0, y: 20 }}
