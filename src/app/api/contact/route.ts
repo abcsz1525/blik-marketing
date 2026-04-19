@@ -1,8 +1,52 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { contactSchema } from '@/lib/contact-schema';
+import { checkRateLimit } from '@/lib/rate-limit';
+
+const ALLOWED_ORIGINS = [
+  'https://blik-marketing.ru',
+  'https://www.blik-marketing.ru',
+  'https://blik-marketing-production.up.railway.app',
+  'http://localhost:3400',
+];
+
+function isAllowedOrigin(origin: string | null): boolean {
+  if (process.env.NODE_ENV !== 'production') return true;
+  if (!origin) return false;
+  return ALLOWED_ORIGINS.includes(origin);
+}
 
 export async function POST(req: Request) {
+  // 1. Origin-check — blocks curl and cross-origin submissions in prod.
+  const origin = req.headers.get('origin');
+  if (!isAllowedOrigin(origin)) {
+    console.warn('[spam-trap] blocked origin:', origin);
+    return NextResponse.json(
+      { ok: false, error: 'forbidden' },
+      { status: 403 },
+    );
+  }
+
+  // 2. Rate-limit by IP. x-forwarded-for first (Railway's standard),
+  //    x-real-ip as fallback for edge cases.
+  const ip =
+    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+    req.headers.get('x-real-ip') ??
+    'unknown';
+  const rate = checkRateLimit(ip);
+  if (!rate.allowed) {
+    console.warn('[spam-trap] rate-limited IP:', ip, 'retryAfter:', rate.retryAfter);
+    return NextResponse.json(
+      { ok: false, error: 'rate_limited' },
+      {
+        status: 429,
+        headers: rate.retryAfter
+          ? { 'Retry-After': String(rate.retryAfter) }
+          : undefined,
+      },
+    );
+  }
+
   try {
     const json = await req.json();
     const data = contactSchema.parse(json);

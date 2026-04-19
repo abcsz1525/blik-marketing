@@ -3,10 +3,12 @@
 import { useTranslations } from 'next-intl';
 import { useForm, type Resolver } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { contactSchema, type ContactInput } from '@/lib/contact-schema';
+
+const TIME_TRAP_MS = 2500;
 
 interface FormValues extends ContactInput {
   consent: boolean;
@@ -23,6 +25,11 @@ export function ContactForm({ theme = 'light' }: Props) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>(
     'idle',
   );
+  const renderedAt = useRef<number>(0);
+
+  useEffect(() => {
+    renderedAt.current = Date.now();
+  }, []);
 
   const {
     register,
@@ -46,6 +53,16 @@ export function ContactForm({ theme = 'light' }: Props) {
   });
 
   const onSubmit = async (data: FormValues) => {
+    // Time-trap — silent success if form submitted suspiciously fast.
+    // Human can't fill a 4-field form in under ~2.5s.
+    const elapsed = Date.now() - renderedAt.current;
+    if (elapsed < TIME_TRAP_MS) {
+      console.warn('[spam-trap] submitted too fast:', elapsed, 'ms');
+      setStatus('success');
+      reset();
+      return;
+    }
+
     if (data.website) {
       // Honeypot triggered — silently succeed
       setStatus('success');
