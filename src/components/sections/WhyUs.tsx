@@ -52,7 +52,7 @@ export function WhyUs() {
   const points = t.raw('points') as Array<{ title: string; body: string }>;
 
   return (
-    <section className="relative py-32 md:py-44 overflow-hidden">
+    <section className="relative section-py bg-[var(--color-surface)] overflow-hidden">
       <div className="container-site">
         <SectionHeader
           eyebrow={t('eyebrow')}

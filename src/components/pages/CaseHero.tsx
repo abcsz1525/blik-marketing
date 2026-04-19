@@ -102,10 +102,7 @@ export function CaseHero({ kase, locale }: Props) {
               <span>{industry?.[locale]}</span>
               <span className="tabular-nums">{kase.year}</span>
             </div>
-            <div
-              className="text-[8vw] md:text-[120px] leading-[0.9] text-[var(--color-ink)]"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
+            <div className="display-md text-[var(--color-ink)]/30">
               {kase.client[locale]}
             </div>
           </div>

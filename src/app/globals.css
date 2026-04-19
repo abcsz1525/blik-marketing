@@ -119,6 +119,17 @@
     padding-inline: clamp(20px, 4vw, 64px);
   }
 
+  /* Vertical rhythm for home page sections and main service pages.
+     NOT for /about which has its own tighter rhythm (py-28 md:py-40). */
+  .section-py {
+    padding-block: 8rem;
+  }
+  @media (min-width: 768px) {
+    .section-py {
+      padding-block: 11rem;
+    }
+  }
+
   .display-xl {
     font-family: var(--font-display);
     font-size: var(--text-display-xl);

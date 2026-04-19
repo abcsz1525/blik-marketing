@@ -12,7 +12,7 @@ export function ServicesGrid() {
   const tItems = useTranslations('services.items');
 
   return (
-    <section className="relative py-32 md:py-44 bg-[var(--color-surface)] overflow-hidden">
+    <section className="relative section-py bg-[var(--color-surface)] overflow-hidden">
       <div className="absolute inset-0 opacity-[0.35] iri-surface pointer-events-none" />
       <div className="container-site relative">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-20">

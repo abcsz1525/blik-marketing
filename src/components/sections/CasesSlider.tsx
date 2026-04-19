@@ -33,7 +33,7 @@ export function CasesSlider() {
   };
 
   return (
-    <section className="relative py-32 md:py-44 overflow-hidden">
+    <section className="relative section-py overflow-hidden">
       <div className="container-site">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-16">
           <SectionHeader

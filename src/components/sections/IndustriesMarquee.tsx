@@ -15,7 +15,7 @@ export function IndustriesMarquee() {
   const doubled = [...clients, ...clients];
 
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden border-y border-[var(--color-line)]">
+    <section className="relative section-py overflow-hidden border-y border-[var(--color-line)]">
       <div className="container-site mb-14">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

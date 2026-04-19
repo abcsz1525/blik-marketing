@@ -8,7 +8,7 @@ export function AboutIntro() {
   const t = useTranslations('aboutShort');
 
   return (
-    <section className="relative py-32 md:py-44 overflow-hidden">
+    <section className="relative section-py overflow-hidden">
       <div className="container-site grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

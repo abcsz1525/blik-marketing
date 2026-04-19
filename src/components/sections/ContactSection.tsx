@@ -12,7 +12,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative py-32 md:py-44 overflow-hidden bg-[var(--color-ink)] text-white"
+      className="relative section-py overflow-hidden bg-[var(--color-ink)] text-white"
     >
       <div
         className="absolute inset-0 opacity-40"
