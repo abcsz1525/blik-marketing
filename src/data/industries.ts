@@ -18,7 +18,7 @@ export const INDUSTRIES: Industry[] = [
     id: 'fashion-beauty',
     ru: 'Мода и бьюти',
     en: 'Fashion & Beauty',
-    clients: ['Choupette', 'Oriflame', 'MLN beauty', 'The Ladies Lounge'],
+    clients: ['Choupette', 'Oriflame', 'MLN Beauty', 'The Ladies Lounge'],
     accent: '#FFD8E4',
   },
   {

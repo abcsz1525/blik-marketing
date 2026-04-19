@@ -404,7 +404,7 @@ export const CASES: CaseStudy[] = [
       en: 'Deliver 90%+ venue occupancy and federal premium media coverage.',
     },
     solution: {
-      ru: 'Провели восточную PR-кампанию: размещения в РИА, Интерфакс, Москва24; организовали пиар-мероприятия в Москве и Европе; подготовили контент-план социальных сетей; согласовали партнёров и спонсоров.',
+      ru: 'Провели скоординированную PR-кампанию: размещения в РИА, Интерфакс, Москва24; организовали пиар-мероприятия в Москве и Европе; подготовили контент-план социальных сетей; согласовали партнёров и спонсоров.',
       en: 'Ran a coordinated PR campaign: placements in RIA, Interfax, Moscow24; PR events in Moscow and Europe; social content plan; partner and sponsor alignment.',
     },
     deliverables: {
