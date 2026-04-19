@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
+import { SectionEyebrow } from '@/components/ui/SectionHeader';
 
 export function AboutStory() {
   const t = useTranslations('about');
@@ -17,7 +18,7 @@ export function AboutStory() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="lg:col-span-4 flex flex-col gap-4"
         >
-          <div className="eyebrow">— 01 {t('storyTitle')}</div>
+          <SectionEyebrow index="— 01" label={t('storyTitle')} />
         </motion.div>
 
         <motion.div

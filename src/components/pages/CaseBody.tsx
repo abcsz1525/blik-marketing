@@ -63,17 +63,7 @@ export function CaseBody({ kase, locale }: Props) {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col gap-10"
         >
-          <div className="flex items-baseline gap-4">
-            <span className="text-[12px] tracking-[0.2em] uppercase text-[var(--color-ink-subtle)] tabular-nums">
-              — 03
-            </span>
-            <h2
-              className="display-md"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
-              {t('resultsLabel')}
-            </h2>
-          </div>
+          <h2 className="display-md">{t('resultsLabel')}</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--color-line)] border border-[var(--color-line)] rounded-[var(--radius-lg)] overflow-hidden">
             {kase.metrics.map((m, i) => (

@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from 'next-intl';
 import { INDUSTRIES } from '@/data/industries';
 import { motion } from 'framer-motion';
+import { SectionEyebrow } from '@/components/ui/SectionHeader';
 
 export function IndustriesMarquee() {
   const t = useTranslations('industries');
@@ -23,10 +24,7 @@ export function IndustriesMarquee() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
         >
-          <div className="eyebrow flex items-center gap-3">
-            <span className="inline-block w-8 h-px bg-[var(--color-ink)] opacity-40" />
-            <span>— 03 {t('eyebrow')}</span>
-          </div>
+          <SectionEyebrow index="— 03" label={t('eyebrow')} />
           <p className="text-[15px] text-[var(--color-ink-muted)] max-w-[52ch]">
             {t('subtitle')}
           </p>

@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { TEAM } from '@/data/team';
+import { SectionHeader } from '@/components/ui/SectionHeader';
 
 const ACCENTS = [
   '#FFD8E4',
@@ -30,21 +31,12 @@ export function TeamGrid({ locale }: Props) {
   return (
     <section className="py-28 md:py-40">
       <div className="container-site">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col gap-4 mb-16"
-        >
-          <div className="eyebrow">— 03 {t('teamTitle')}</div>
-          <h2
-            className="display-lg max-w-[20ch] balanced"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            {t('teamSubtitle')}
-          </h2>
-        </motion.div>
+        <SectionHeader
+          index="— 03"
+          eyebrow={t('teamTitle')}
+          title={t('teamSubtitle')}
+          className="mb-16"
+        />
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-10">
           {TEAM.map((m, idx) => (

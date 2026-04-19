@@ -3,6 +3,23 @@
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
+interface SectionEyebrowProps {
+  index?: string;
+  label?: React.ReactNode;
+  className?: string;
+}
+
+export function SectionEyebrow({ index, label, className }: SectionEyebrowProps) {
+  if (!index && !label) return null;
+  return (
+    <div className={cn('flex items-center gap-3 eyebrow', className)}>
+      {index && <span className="text-[var(--color-ink-subtle)]">{index}</span>}
+      {index && label && <span className="divider-dot" />}
+      {label && <span>{label}</span>}
+    </div>
+  );
+}
+
 interface Props {
   eyebrow?: string;
   title: React.ReactNode;
@@ -32,13 +49,7 @@ export function SectionHeader({
         className,
       )}
     >
-      {(eyebrow || index) && (
-        <div className="flex items-center gap-3 eyebrow">
-          {index && <span className="text-[var(--color-ink-subtle)]">{index}</span>}
-          {index && eyebrow && <span className="divider-dot" />}
-          {eyebrow && <span>{eyebrow}</span>}
-        </div>
-      )}
+      <SectionEyebrow index={index} label={eyebrow} />
       <h2 className="display-lg balanced max-w-[20ch]">{title}</h2>
       {subtitle && (
         <p

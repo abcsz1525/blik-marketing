@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { ContactForm } from '@/components/sections/ContactForm';
+import { SectionEyebrow } from '@/components/ui/SectionHeader';
 
 export function ContactSection() {
   const t = useTranslations('contact');
@@ -30,10 +31,11 @@ export function ContactSection() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="lg:col-span-5 flex flex-col gap-10"
         >
-          <div className="eyebrow text-[var(--color-ink-subtle)]">
-            <span className="inline-block w-8 h-px bg-white/30 mr-3 align-middle" />
-            — 05 {t('eyebrow')}
-          </div>
+          <SectionEyebrow
+            index="— 05"
+            label={t('eyebrow')}
+            className="text-white/60"
+          />
           <h2
             className="display-lg balanced max-w-[18ch]"
             style={{ fontFamily: 'var(--font-display)' }}
@@ -45,7 +47,7 @@ export function ContactSection() {
           </p>
 
           <div className="flex flex-col gap-6 mt-8 pt-8 border-t border-white/15">
-            <div className="eyebrow text-white/40">{tDirect('label')}</div>
+            <SectionEyebrow label={tDirect('label')} className="text-white/40" />
             <div className="flex flex-col gap-2">
               <a
                 href="mailto:itsdanilina@yandex.ru"

@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import { SectionEyebrow } from '@/components/ui/SectionHeader';
 
 const IridescentCanvas = dynamic(
   () => import('@/components/hero/IridescentCanvas').then((m) => m.IridescentCanvas),
@@ -32,7 +33,7 @@ export function AboutPhilosophy() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col gap-10 max-w-[900px] mx-auto text-center items-center"
         >
-          <div className="eyebrow">— 02 {t('philosophyTitle')}</div>
+          <SectionEyebrow index="— 02" label={t('philosophyTitle')} />
 
           <h2
             className="display-lg balanced max-w-[18ch]"
