@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:typograf": "node --experimental-strip-types src/lib/typograf.test.ts"
   },
   "dependencies": {
     "@react-three/fiber": "^9.1.2",
@@ -21,6 +22,7 @@
     "react-hook-form": "^7.54.2",
     "tailwind-merge": "^2.6.0",
     "three": "^0.171.0",
+    "typograf": "7.7.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {
