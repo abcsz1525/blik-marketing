@@ -18,8 +18,7 @@
     "titleAccent": "преломляет свет",
     "subtitle": "Стратегия, бренд, коммуникации и кризис. Для компаний, где форма весит столько же, сколько продукт.",
     "cta": "Обсудить проект",
-    "ctaSecondary": "Кейсы",
-    "scrollHint": "Ниже"
+    "ctaSecondary": "Кейсы"
   },
   "aboutShort": {
     "eyebrow": "О нас",
@@ -174,7 +173,11 @@
       "email": "itsdanilina@yandex.ru",
       "phone": "+7 905 772 88 00",
       "phoneHuman": "+7 (905) 772-88-00",
-      "owner": "Елена Данилина, управляющий партнёр"
+      "owner": "Елена Данилина, управляющий партнёр",
+      "emailLabel": "Email",
+      "phoneLabel": "Телефон, Telegram, WhatsApp",
+      "locationLabel": "Расположение",
+      "location": "Москва"
     },
     "hours": "Пн–Пт, 10:00–19:00 МСК"
   },

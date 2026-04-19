@@ -72,7 +72,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-4">
-            <LinkButton href="/contacts" variant="primary" size="lg" withArrow>
+            <LinkButton href="#contact" variant="primary" size="lg" withArrow>
               {t('cta')}
             </LinkButton>
             <LinkButton href="/portfolio" variant="ghost" size="lg">
@@ -81,19 +81,6 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.6, duration: 0.8 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-[11px] tracking-[0.24em] uppercase text-[var(--color-ink-muted)]"
-        >
-          <span>{t('scrollHint')}</span>
-          <motion.span
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-px h-10 bg-gradient-to-b from-[var(--color-ink-muted)] to-transparent"
-          />
-        </motion.div>
       </div>
     </section>
   );

@@ -18,8 +18,7 @@
     "titleAccent": "refracted through the details",
     "subtitle": "Strategy, brand, communications and creative for companies that aim to be genuinely noticed.",
     "cta": "Get in touch",
-    "ctaSecondary": "See the work",
-    "scrollHint": "Scroll"
+    "ctaSecondary": "See the work"
   },
   "aboutShort": {
     "eyebrow": "About",
@@ -174,7 +173,11 @@
       "email": "itsdanilina@yandex.ru",
       "phone": "+7 905 772 88 00",
       "phoneHuman": "+7 (905) 772-88-00",
-      "owner": "Elena Danilina, Managing Partner"
+      "owner": "Elena Danilina, Managing Partner",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone, Telegram, WhatsApp",
+      "locationLabel": "Location",
+      "location": "Moscow"
     },
     "hours": "Mon–Fri, 10:00–19:00 Moscow"
   },
