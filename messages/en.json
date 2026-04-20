@@ -219,7 +219,7 @@
       "contact": "Contact",
       "legal": "Legal"
     },
-    "copyright": "© {year} Blik Marketing. All rights reserved.",
+    "copyright": "© {year} Blik Marketing",
     "owner": "Elena Danilina",
     "privacy": "Privacy policy",
     "agreement": "Public offer",
@@ -233,5 +233,48 @@
     "year": "Year",
     "inProgress": "In progress",
     "external": "Open"
+  },
+  "privacyPage": {
+    "eyebrow": "Legal",
+    "title": "Privacy policy",
+    "subtitle": "Personal data processing on blik-marketing.ru.",
+    "lastUpdated": "Last updated: April 20, 2026",
+    "sections": {
+      "operator": {
+        "title": "Operator",
+        "body": "Elena Danilina. Contact for legal inquiries: itsdanilina@yandex.ru."
+      },
+      "purposes": {
+        "title": "Purposes of processing",
+        "body": "Contacting a prospective client about their inquiry, answering questions, delivering commercial proposals."
+      },
+      "lawful": {
+        "title": "Legal basis",
+        "body": "Consent of the data subject, expressed by checking the consent box when submitting the contact form."
+      },
+      "categories": {
+        "title": "Categories of data",
+        "body": "Name, company name, email, phone (optional), message text."
+      },
+      "retention": {
+        "title": "Retention period",
+        "body": "Until the purposes of processing are achieved or until consent is withdrawn by the subject."
+      },
+      "rights": {
+        "title": "Subject's rights",
+        "body": "Request amendment, deletion of personal data, or restriction of processing. Address for requests: itsdanilina@yandex.ru."
+      },
+      "security": {
+        "title": "Security",
+        "body": "Technical and organisational measures are applied to protect the information."
+      }
+    }
+  },
+  "agreementPage": {
+    "eyebrow": "Legal",
+    "title": "Agreement",
+    "subtitle": "Terms of service.",
+    "lastUpdated": "Last updated: April 20, 2026",
+    "body": "The agency provides services in marketing strategy, branding, communications, and crisis management. Specific terms are formalised in a separate contract with each client. To discuss terms: itsdanilina@yandex.ru."
   }
 }

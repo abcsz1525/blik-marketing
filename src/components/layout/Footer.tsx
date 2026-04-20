@@ -99,10 +99,10 @@ export function Footer() {
             </span>
           </div>
           <div className="flex items-center gap-6">
-            <Link href="/contacts" className="hover:text-[var(--color-ink)] transition-colors">
+            <Link href="/privacy" className="hover:text-[var(--color-ink)] transition-colors">
               {t('privacy')}
             </Link>
-            <Link href="/contacts" className="hover:text-[var(--color-ink)] transition-colors">
+            <Link href="/agreement" className="hover:text-[var(--color-ink)] transition-colors">
               {t('agreement')}
             </Link>
           </div>
