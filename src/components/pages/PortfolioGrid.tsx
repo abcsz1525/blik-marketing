@@ -8,6 +8,7 @@ import { INDUSTRIES } from '@/data/industries';
 import { SERVICES } from '@/data/services';
 import type { CaseStudy } from '@/data/cases';
 import { cn } from '@/lib/utils';
+import { TiltCard } from '@/components/ui/TiltCard';
 
 interface Props {
   cases: CaseStudy[];
@@ -126,10 +127,11 @@ export function PortfolioGrid({ cases, locale }: Props) {
                     }}
                     className={oddOffset}
                   >
-                    <Link
-                      href={`/portfolio/${c.slug}`}
-                      className="group block"
-                    >
+                    <TiltCard>
+                      <Link
+                        href={`/portfolio/${c.slug}`}
+                        className="group block"
+                      >
                       <div
                         className="relative aspect-[4/3] rounded-[var(--radius-lg)] overflow-hidden mb-6"
                         style={{
@@ -187,7 +189,8 @@ export function PortfolioGrid({ cases, locale }: Props) {
                           ))}
                         </div>
                       </div>
-                    </Link>
+                      </Link>
+                    </TiltCard>
                   </motion.div>
                 );
               })}
