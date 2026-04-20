@@ -154,6 +154,17 @@
     letter-spacing: 0.03em;
   }
 
+  /* Display-size headings can hit overflow with long single Cyrillic words
+     (e.g. "Позиционирование" in narrow grid columns). Browser-native
+     hyphenation breaks by syllable with a hyphen char, using the dictionary
+     selected via the nearest `lang` attribute. */
+  .display-xl,
+  .display-lg,
+  .display-md {
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
   .eyebrow {
     font-family: var(--font-sans);
     font-size: 0.75rem;
