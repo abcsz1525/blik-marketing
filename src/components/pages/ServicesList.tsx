@@ -42,7 +42,7 @@ export function ServicesList({ services, locale }: Props) {
                 />
               </div>
               <h2
-                className="display-md max-w-[16ch] balanced leading-[1.02]"
+                className="display-md max-w-[16ch] balanced leading-[1.02] break-words"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
                 {t(`${s.id}.name`)}

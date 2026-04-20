@@ -58,7 +58,7 @@ export function ServicesGrid() {
                 </div>
 
                 <h3
-                  className="display-md mt-auto max-w-[14ch] balanced leading-[1.02]"
+                  className="display-md mt-auto max-w-[14ch] balanced leading-[1.02] break-words"
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
                   {tItems(`${s.id}.name`)}

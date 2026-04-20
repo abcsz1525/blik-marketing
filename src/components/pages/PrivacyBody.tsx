@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 
 const SECTION_KEYS = [
@@ -15,6 +15,7 @@ const SECTION_KEYS = [
 
 export function PrivacyBody() {
   const t = useTranslations('privacyPage');
+  const locale = useLocale();
 
   return (
     <>
@@ -41,7 +42,12 @@ export function PrivacyBody() {
             className="flex flex-col gap-8 max-w-[900px]"
           >
             <div className="eyebrow">{t('eyebrow')}</div>
-            <h1 className="display-xl balanced max-w-[20ch]">{t('title')}</h1>
+            <h1
+              lang={locale}
+              className="display-xl balanced max-w-[20ch] hyphens-auto"
+            >
+              {t('title')}
+            </h1>
             <p className="text-[18px] md:text-[20px] leading-relaxed text-[var(--color-ink)] max-w-[58ch] balanced">
               {t('subtitle')}
             </p>

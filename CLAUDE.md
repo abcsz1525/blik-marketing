@@ -268,3 +268,11 @@ npm run typecheck
 - CTA в конце `/services` и `/about` (помечены `[ ]` в разделе 5).
 - Проверка мобильных адаптаций всех страниц.
 - После получения реальных данных команды — замена плейсхолдеров в `src/data/team.ts`.
+
+---
+
+## 14. Known Technical Debt
+
+Архитектурные задачи, не блокирующие текущую разработку, но подлежащие фиксу до production launch.
+
+- [ ] **Root html lang hardcoded** в `src/app/layout.tsx:43` — `<html lang="ru">` статически. Должно быть динамическим от `useLocale()` / `params.locale`. Fix: перенести `<html>` из `app/layout.tsx` в `app/[locale]/layout.tsx`, использовать `params.locale`. Blocks: корректный SEO для EN-страниц (Google индексирует их как русские), правильность screen reader voice selection (EN-текст читается русским голосом). **Priority: MEDIUM (required before public launch).**
