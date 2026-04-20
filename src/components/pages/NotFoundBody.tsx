@@ -26,7 +26,7 @@ export function NotFoundBody() {
           className="flex flex-col gap-8 max-w-[900px]"
         >
           <div className="eyebrow">{t('eyebrow')}</div>
-          <h1 lang={locale} className="display-lg balanced max-w-[18ch]">
+          <h1 lang={locale} className="display-lg balanced max-w-[18ch] hyphens-auto">
             {t('title')}
           </h1>
           <p className="text-[18px] md:text-[20px] leading-relaxed text-[var(--color-ink-muted)] max-w-[48ch] balanced">
