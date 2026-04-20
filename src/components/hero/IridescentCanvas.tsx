@@ -10,6 +10,9 @@
  *     scene is dynamically imported and mounted on top of the CSS fallback.
  *  3. WebGL is skipped entirely on reduced-motion, no-WebGL devices,
  *     and very small viewports (< 480px) — saves bandwidth on phones.
+ *  4. Once mounted, the Three.js Canvas is paused (frameloop="never")
+ *     when the container scrolls ~100px past the viewport. Saves GPU
+ *     and battery — matters especially for mobile (UI-audit NICE-TO-HAVE I).
  *
  * This keeps the Three.js chunk OUT of the initial bundle for the
  * first paint, dropping TBT and LCP on slow devices.
@@ -20,9 +23,17 @@ interface Props {
   className?: string;
 }
 
+interface SceneProps {
+  isVisible?: boolean;
+}
+
 export function IridescentCanvas({ className }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [Scene, setScene] = useState<ComponentType | null>(null);
+  const [Scene, setScene] = useState<ComponentType<SceneProps> | null>(null);
+  // Starts false — IntersectionObserver corrects synchronously on observe().
+  // Covers AboutPhilosophy (below-fold section) correctly; hero-contexts
+  // flip to true well before the fade-in animation reveals the canvas.
+  const [isVisible, setIsVisible] = useState(false);
   const mountedRef = useRef(false);
 
   useEffect(() => {
@@ -88,6 +99,19 @@ export function IridescentCanvas({ className }: Props) {
     };
   }, []);
 
+  useEffect(() => {
+    if (!containerRef.current || typeof IntersectionObserver === 'undefined') {
+      return;
+    }
+    const el = containerRef.current;
+    const obs = new IntersectionObserver(
+      (entries) => setIsVisible(entries[0].isIntersecting),
+      { rootMargin: '100px 0px', threshold: 0 },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <div
       ref={containerRef}
@@ -99,7 +123,7 @@ export function IridescentCanvas({ className }: Props) {
       {/* WebGL layer — overlays once mounted */}
       {Scene && (
         <div className="absolute inset-0 animate-[fadein_900ms_ease-out_forwards] opacity-0">
-          <Scene />
+          <Scene isVisible={isVisible} />
         </div>
       )}
     </div>

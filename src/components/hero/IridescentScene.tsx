@@ -151,7 +151,11 @@ function IridescentPlane() {
   );
 }
 
-export default function IridescentScene() {
+interface Props {
+  isVisible?: boolean;
+}
+
+export default function IridescentScene({ isVisible = true }: Props) {
   return (
     <Canvas
       dpr={[1, 1.6]}
@@ -164,7 +168,7 @@ export default function IridescentScene() {
       orthographic
       camera={{ position: [0, 0, 1], zoom: 1 }}
       style={{ width: '100%', height: '100%' }}
-      frameloop="always"
+      frameloop={isVisible ? 'always' : 'never'}
     >
       <IridescentPlane />
     </Canvas>
