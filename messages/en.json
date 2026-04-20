@@ -276,5 +276,11 @@
     "subtitle": "Terms of service.",
     "lastUpdated": "Last updated: April 20, 2026",
     "body": "The agency provides services in marketing strategy, branding, communications, and crisis management. Specific terms are formalised in a separate contract with each client. To discuss terms: itsdanilina@yandex.ru."
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "Page not found",
+    "subtitle": "Check the URL or return to the home page.",
+    "cta": "Return home"
   }
 }

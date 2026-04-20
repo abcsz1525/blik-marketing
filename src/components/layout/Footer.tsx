@@ -93,7 +93,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[12px] text-[var(--color-ink-muted)]">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <span>{t('copyright', { year })}</span>
-            <span className="divider-dot hidden md:inline-block" />
+            <span className="breathing-dot hidden md:inline-block" aria-hidden />
             <span>
               {t('madeIn')}, {locale === 'ru' ? 'Россия' : 'Russia'}
             </span>

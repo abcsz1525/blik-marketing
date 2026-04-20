@@ -286,6 +286,22 @@
     vertical-align: middle;
   }
 
+  .breathing-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-ink-subtle);
+    display: inline-block;
+    vertical-align: middle;
+    animation: breathe 2s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .breathing-dot {
+      animation: none;
+      opacity: 0.6;
+    }
+  }
+
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }
@@ -300,6 +316,11 @@
 @keyframes iri-shine {
   0% { background-position: 0% 0%; }
   100% { background-position: 200% 0%; }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }
 
 @keyframes marquee {
