@@ -126,26 +126,8 @@
     "philosophyTitle": "Философия",
     "philosophyLead": "БЛИК — про момент, когда свет преломляется и становится акцентом.",
     "philosophy": "Каждый бренд проходит через эту точку. Не добавляем громкости — наводим фокус. Находим грань, на которой продукт блестит. И делаем так, чтобы блик увидели.",
-    "teamTitle": "Команда",
-    "teamSubtitle": "12 специалистов. Каждый ведёт своё направление.",
     "industriesTitle": "Отрасли, в которых работали",
     "cta": "Обсудить ваш проект"
-  },
-  "team": {
-    "role": {
-      "founder": "Основатель, стратегический директор",
-      "managing": "Управляющий партнёр",
-      "creative": "Креативный директор",
-      "brand": "Бренд-стратег",
-      "design": "Арт-директор",
-      "copy": "Head of Copy",
-      "smm": "Head of SMM & ORM",
-      "pr": "Head of PR & Media",
-      "projects": "Head of Project Management",
-      "research": "Ведущий исследователь",
-      "motion": "Motion & Video Lead",
-      "client": "Client Service Director"
-    }
   },
   "contact": {
     "eyebrow": "Связаться",

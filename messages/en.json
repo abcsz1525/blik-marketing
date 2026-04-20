@@ -126,26 +126,8 @@
     "philosophyTitle": "Philosophy",
     "philosophyLead": "The concept of BLIK is about the instant light refracts and becomes an accent.",
     "philosophy": "Every brand we work with passes through that point of refraction. We don't turn up the volume — we focus it. We find the edge where the product glitters. And we make sure the audience sees that glint.",
-    "teamTitle": "Team",
-    "teamSubtitle": "12 specialists. Each one leading their craft.",
     "industriesTitle": "Industries we serve",
     "cta": "Talk about your project"
-  },
-  "team": {
-    "role": {
-      "founder": "Founder, Strategy Director",
-      "managing": "Managing Partner",
-      "creative": "Creative Director",
-      "brand": "Brand Strategist",
-      "design": "Art Director",
-      "copy": "Head of Copy",
-      "smm": "Head of Social & ORM",
-      "pr": "Head of PR & Media",
-      "projects": "Head of Project Management",
-      "research": "Lead Researcher",
-      "motion": "Motion & Video Lead",
-      "client": "Client Service Director"
-    }
   },
   "contact": {
     "eyebrow": "Contact",

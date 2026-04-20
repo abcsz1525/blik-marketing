@@ -133,7 +133,6 @@ messages/
 - [x] AboutHero
 - [x] AboutStory: история, миссия
 - [x] AboutPhilosophy: модель БЛИК
-- [x] TeamGrid: 12 человек
 - [ ] CTA
 
 ### 5.5 Контакты (`/contacts`)
@@ -188,11 +187,10 @@ messages/
 | 3 | Email для приёма заявок формы | Да — пришлют позже |
 | 4 | Ключи Яндекс.Метрика, GA4, reCAPTCHA v3 | Да — аналитики раньше не было |
 | 5 | Перевод текстов на EN | Да — ответственность клиента |
-| 6 | Имена + роли + фото реальных 12 человек команды | **Да — критично перед продом.** Сейчас 11 плейсхолдеров в `team.ts` |
-| 7 | Материалы кейсов: обложки 16:9 ≥1920px, галереи 4–8 визуалов, описания «Задача→Решение→Результат» | Частично есть (презентация), нужна адаптация |
-| 8 | Интеграция Sanity CMS | Нет — делаем после утверждения дизайна |
-| 9 | Антиспам (honeypot / reCAPTCHA v3) | Нет — реализуем при получении ключей |
-| 10 | Продакшн-домен `blik-marketing.ru` → Railway | Совместно с клиентом |
+| 6 | Материалы кейсов: обложки 16:9 ≥1920px, галереи 4–8 визуалов, описания «Задача→Решение→Результат» | Частично есть (презентация), нужна адаптация |
+| 7 | Интеграция Sanity CMS | Нет — делаем после утверждения дизайна |
+| 8 | Антиспам (honeypot / reCAPTCHA v3) | Нет — реализуем при получении ключей |
+| 9 | Продакшн-домен `blik-marketing.ru` → Railway | Совместно с клиентом |
 
 ---
 
@@ -284,3 +282,5 @@ npm run typecheck
 - [ ] **Inline `style={{ fontFamily: 'var(--font-display)' }}` как dead code** в нескольких компонентах. Классы `.display-xl/lg/md` и `h1-h6` в @layer base уже применяют `font-family: var(--font-display)`. Текущие inline-стили — defensive redundancy из ранних спринтов. Места: `AboutPhilosophy.tsx`, `ContactSection.tsx h2`, `CaseHero.tsx h1`, `CasesSlider.tsx h3`, `NextCase.tsx` (до рефактора), `PortfolioGrid.tsx h3/h4`, `TeamGrid.tsx h3`, `ServicesList.tsx h2`, `ServicesGrid.tsx h3`, `ContactsDetails.tsx value span`. Fix: grep + удалить. **Priority: LOW** (cosmetic cleanup).
 
 - [ ] **`.divider-dot` missing `aria-hidden`** на всех usage'ах. Screen reader читает "точка" — шум для nav-меток. Места: `SectionHeader.tsx` (внутри `SectionEyebrow`), `CaseBody.tsx`, `PortfolioGrid.tsx`, `CasesSlider.tsx`, `Footer.tsx copyright-row` (уже исправлено через swap на `.breathing-dot aria-hidden` в Sprint 5B), `NotFoundBody.tsx` (если там есть). Fix: grep `divider-dot` + добавить `aria-hidden` атрибут. **Priority: LOW** (a11y polish).
+
+- [ ] **`whyUs.metrics.team` inconsistency** — на главной WhyUs блок содержит метрику о численности команды (label «специалистов в команде»). После удаления team section с /about в Sprint 6-prep-5 это создаёт consistency gap: Елена целенаправленно убрала упоминание численности команды с сайта, но метрика на главной всё ещё её показывает. Решение: обсудить с клиентом — оставить как метрику достижения («размер команды» = signal'овое достижение) или убрать для полной consistency. **Priority: LOW** (не блокирует запуск, косметическая).

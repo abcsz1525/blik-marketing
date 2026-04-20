@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { AboutHero } from '@/components/pages/AboutHero';
 import { AboutStory } from '@/components/pages/AboutStory';
 import { AboutPhilosophy } from '@/components/pages/AboutPhilosophy';
-import { TeamGrid } from '@/components/pages/TeamGrid';
 import { IndustriesMarquee } from '@/components/sections/IndustriesMarquee';
 import { ContactSection } from '@/components/sections/ContactSection';
 
@@ -29,7 +28,6 @@ export default async function AboutPage({
       <AboutHero />
       <AboutStory />
       <AboutPhilosophy />
-      <TeamGrid locale={locale as 'ru' | 'en'} />
       <IndustriesMarquee />
       <ContactSection />
     </>
