@@ -21,9 +21,6 @@ export function AboutIntro() {
             <span className="inline-block w-8 h-px bg-[var(--color-ink)] opacity-40 mr-3 align-middle" />
             {t('eyebrow')}
           </div>
-          <div className="text-[12px] tracking-[0.2em] uppercase text-[var(--color-ink-subtle)] tabular-nums">
-            — 2022
-          </div>
         </motion.div>
 
         <motion.div

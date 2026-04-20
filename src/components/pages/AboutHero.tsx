@@ -34,7 +34,7 @@ export function AboutHero() {
             <span>{t('eyebrow')}</span>
           </div>
           <h1
-            className="display-xl balanced max-w-[20ch]"
+            className="display-xl balanced max-w-[28ch]"
             style={{ fontFamily: 'var(--font-display)' }}
           >
             {t('title')}
