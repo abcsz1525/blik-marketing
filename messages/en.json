@@ -182,6 +182,11 @@
       "locationLabel": "Location",
       "location": "Moscow"
     },
+    "successActions": {
+      "title": "Or reach us directly",
+      "whatsapp": "WhatsApp",
+      "whatsappUrl": "https://wa.me/79057728800"
+    },
     "hours": "Mon–Fri, 10:00–19:00 Moscow"
   },
   "portfolioPage": {

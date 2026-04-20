@@ -22,6 +22,7 @@ interface Props {
 
 export function ContactForm({ theme = 'light' }: Props) {
   const t = useTranslations('contact.form');
+  const tSuccess = useTranslations('contact.successActions');
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>(
     'idle',
   );
@@ -83,6 +84,14 @@ export function ContactForm({ theme = 'light' }: Props) {
         }),
       });
       if (!res.ok) throw new Error('Bad response');
+
+      if (typeof window !== 'undefined' && window.dataLayer) {
+        window.dataLayer.push({
+          event: 'lead_submit',
+          form_id: 'contact',
+        });
+      }
+
       setStatus('success');
       reset();
     } catch {
@@ -105,6 +114,43 @@ export function ContactForm({ theme = 'light' }: Props) {
   );
 
   const errorClass = 'text-[12px] text-[#FF7A7A] mt-2 block';
+
+  // Success view replaces the form entirely after a successful submission.
+  if (status === 'success') {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="flex flex-col gap-6"
+      >
+        <p
+          className={cn(
+            'text-[17px] leading-relaxed balanced',
+            isDark ? 'text-white' : 'text-[var(--color-ink)]',
+          )}
+        >
+          {t('success')}
+        </p>
+        <div className="flex flex-col gap-3">
+          <span className={labelClass}>{tSuccess('title')}</span>
+          <a
+            href={tSuccess('whatsappUrl')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              'text-[17px] w-fit underline underline-offset-[6px] decoration-1 transition-colors',
+              isDark
+                ? 'decoration-white/40 hover:decoration-white text-white'
+                : 'decoration-[var(--color-line-strong)] hover:decoration-[var(--color-ink)] text-[var(--color-ink)]',
+            )}
+          >
+            {tSuccess('whatsapp')} →
+          </a>
+        </div>
+      </motion.div>
+    );
+  }
 
   return (
     <form
@@ -222,45 +268,43 @@ export function ContactForm({ theme = 'light' }: Props) {
         </span>
       </label>
 
-      <div className="flex items-center gap-6 mt-2">
-        <button
-          type="submit"
-          disabled={status === 'submitting'}
-          className={cn(
-            'inline-flex items-center gap-3 h-14 px-8 rounded-full font-medium text-[14px] tracking-[0.04em] transition-all duration-400 will-change-transform hover:-translate-y-0.5 disabled:opacity-60',
-            isDark
-              ? 'bg-white text-[var(--color-ink)] hover:shadow-[0_10px_40px_rgba(255,255,255,0.25)]'
-              : 'bg-[var(--color-ink)] text-white hover:shadow-[0_10px_30px_rgba(26,26,26,0.25)]',
-          )}
-        >
-          {status === 'submitting' ? t('submitting') : t('submit')}
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-            <path
-              d="M2 7h10M8 3l4 4-4 4"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
-          </svg>
-        </button>
+      <div className="flex flex-col gap-3 mt-2">
+        <div className="flex items-center gap-6">
+          <button
+            type="submit"
+            disabled={status === 'submitting'}
+            className={cn(
+              'inline-flex items-center gap-3 h-14 px-8 rounded-full font-medium text-[14px] tracking-[0.04em] transition-all duration-400 will-change-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed',
+              isDark
+                ? 'bg-white text-[var(--color-ink)] hover:shadow-[0_10px_40px_rgba(255,255,255,0.25)]'
+                : 'bg-[var(--color-ink)] text-white hover:shadow-[0_10px_30px_rgba(26,26,26,0.25)]',
+            )}
+          >
+            {status === 'submitting' ? t('submitting') : t('submit')}
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              aria-hidden
+              className={cn(status === 'submitting' && 'animate-pulse')}
+            >
+              <path
+                d="M2 7h10M8 3l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className={cn('iri-line', status === 'submitting' && 'is-active')}
+          aria-hidden
+        />
       </div>
 
       <AnimatePresence>
-        {status === 'success' && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            className={cn(
-              'text-[14px] p-4 rounded-lg border',
-              isDark
-                ? 'border-white/20 bg-white/5 text-white'
-                : 'border-[var(--color-line)] bg-[var(--color-surface)] text-[var(--color-ink)]',
-            )}
-          >
-            {t('success')}
-          </motion.div>
-        )}
         {status === 'error' && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}

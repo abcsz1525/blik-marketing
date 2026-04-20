@@ -182,6 +182,11 @@
       "locationLabel": "Расположение",
       "location": "Москва"
     },
+    "successActions": {
+      "title": "Или свяжитесь напрямую",
+      "whatsapp": "WhatsApp",
+      "whatsappUrl": "https://wa.me/79057728800"
+    },
     "hours": "Пн–Пт, 10:00–19:00 МСК"
   },
   "portfolioPage": {
