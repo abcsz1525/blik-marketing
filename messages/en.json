@@ -22,7 +22,7 @@
   },
   "aboutShort": {
     "eyebrow": "About",
-    "headline": "A premium marketing studio — based in Moscow, working with clients across the world.",
+    "headline": "A premium marketing studio working with clients across the world.",
     "lead": "We sit at the intersection of strategy, brand and communications. Every project is a point of refraction — the moment a brand becomes seen, wanted and commercial.",
     "learnMore": "Learn more about the studio"
   },
@@ -179,9 +179,7 @@
       "phoneHuman": "+7 (905) 772-88-00",
       "owner": "Elena Danilina, Managing Partner",
       "emailLabel": "Email",
-      "phoneLabel": "Phone, Telegram, WhatsApp",
-      "locationLabel": "Location",
-      "location": "Moscow"
+      "phoneLabel": "Phone, Telegram, WhatsApp"
     },
     "successActions": {
       "title": "Or reach us directly",
@@ -224,7 +222,7 @@
     "owner": "Elena Danilina",
     "privacy": "Privacy policy",
     "agreement": "Public offer",
-    "madeIn": "Moscow"
+    "madeIn": "Russia"
   },
   "common": {
     "back": "Back",

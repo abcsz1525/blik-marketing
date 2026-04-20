@@ -6,14 +6,13 @@ import { motion } from 'framer-motion';
 export function ContactsDetails() {
   const t = useTranslations('contact.directContact');
   const items = [
-    { label: t('emailLabel'),    value: t('email'),      href: `mailto:${t('email')}` },
-    { label: t('phoneLabel'),    value: t('phoneHuman'), href: 'tel:+79057728800' },
-    { label: t('locationLabel'), value: t('location'),   href: null as string | null },
+    { label: t('emailLabel'), value: t('email'),      href: `mailto:${t('email')}` },
+    { label: t('phoneLabel'), value: t('phoneHuman'), href: 'tel:+79057728800' as string | null },
   ];
 
   return (
     <section className="py-16 md:py-20 border-t border-[var(--color-line)]">
-      <div className="container-site grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+      <div className="container-site grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8">
         {items.map((item, i) => {
           const animationProps = {
             initial: { opacity: 0, y: 24 },

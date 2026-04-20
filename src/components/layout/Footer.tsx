@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Logo } from '@/components/ui/Logo';
 import { SERVICES } from '@/data/services';
-import { useLocale } from 'next-intl';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -12,7 +11,6 @@ export function Footer() {
   const tContact = useTranslations('contact.directContact');
   const tNav = useTranslations('nav');
   const year = new Date().getFullYear();
-  const locale = useLocale();
 
   return (
     <footer className="relative border-t border-[var(--color-line)] bg-[var(--color-background)]">
@@ -94,9 +92,7 @@ export function Footer() {
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <span>{t('copyright', { year })}</span>
             <span className="breathing-dot hidden md:inline-block" aria-hidden />
-            <span>
-              {t('madeIn')}, {locale === 'ru' ? 'Россия' : 'Russia'}
-            </span>
+            <span>{t('madeIn')}</span>
           </div>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:text-[var(--color-ink)] transition-colors">
