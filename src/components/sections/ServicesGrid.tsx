@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { SERVICES } from '@/data/services';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -10,6 +10,7 @@ import { LinkButton } from '@/components/ui/Button';
 export function ServicesGrid() {
   const t = useTranslations('services');
   const tItems = useTranslations('services.items');
+  const locale = useLocale();
 
   return (
     <section className="relative section-py bg-[var(--color-surface)] overflow-hidden">
@@ -58,7 +59,8 @@ export function ServicesGrid() {
                 </div>
 
                 <h3
-                  className="display-md mt-auto max-w-[14ch] balanced leading-[1.02] break-words"
+                  lang={locale}
+                  className="display-md mt-auto max-w-[14ch] balanced leading-[1.02] hyphens-auto"
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
                   {tItems(`${s.id}.name`)}
