@@ -39,6 +39,9 @@ export function AboutHero() {
           >
             {t('title')}
           </h1>
+          <p className="text-[18px] md:text-[22px] leading-relaxed text-[var(--color-ink)] max-w-[58ch] balanced">
+            {t('positioning')}
+          </p>
           <p className="text-[18px] md:text-[20px] leading-relaxed text-[var(--color-ink)] max-w-[58ch] balanced">
             {t('lead')}
           </p>
